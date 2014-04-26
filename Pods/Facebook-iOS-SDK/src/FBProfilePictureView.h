@@ -65,6 +65,7 @@ typedef enum {
  */
 - (instancetype)init;
 
+-(UIImage*)getProfilePicture;
 
 /*!
  @abstract

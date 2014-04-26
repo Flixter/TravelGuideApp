@@ -132,8 +132,8 @@
         return;
     }
 
-    UIImageView *imageView = [[[UIImageView alloc] initWithFrame:self.bounds] autorelease];
-    imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    UIImageView *imageView = [[UIImageView alloc] init];
+//    imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.imageView = imageView;
 
     self.autoresizesSubviews = YES;
@@ -167,6 +167,11 @@
             self.connection = nil;
             if (!error) {
                 self.imageView.image = ([UIImage imageWithData:data] ?: [self _placeholderImage]);
+                NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+                NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"ProfilePicture.png"];
+                // Save image.
+                [UIImagePNGRepresentation(self.imageView.image) writeToFile:filePath atomically:YES];
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"ProfilePictureStored" object:nil];
                 [self ensureImageViewContentMode];
             }
         };
@@ -237,6 +242,10 @@
 
 - (CGSize)intrinsicContentSize {
     return self.bounds.size;
+}
+
+-(UIImage *)getProfilePicture{
+    return self.imageView.image;
 }
 
 @end

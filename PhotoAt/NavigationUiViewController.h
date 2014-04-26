@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Constants.h"
 #import <FacebookSDK/FacebookSDK.h>
 @interface NavigationUiViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *surnameLabel;
-
+@property (nonatomic, retain) UILabel* userInfo;
+@property (nonatomic, retain) UIImageView* _profilePictureView;
 @end

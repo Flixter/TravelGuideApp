@@ -7,55 +7,66 @@
 //
 
 #import "LoginViewController.h"
-#import <Masonry.h>
 #import "LoginAppDelegate.h"
-
+#import "FacebookManager.h"
+#import "DrawerViewController.h"
 @interface LoginViewController ()
 
 @end
 
 @implementation LoginViewController
 
+-(id)init{
+    
+    self = [super init];
+    if(self){
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sucessfulllLogIn) name:UserSucessfullyLogedIn object:nil];
+    }
+    
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
+
+	UIButton* loginView = [UIButton new];
+    [loginView setTitle:@"Login WithFacebook" forState:UIControlStateNormal];
+    [loginView addTarget:self action:@selector(loginUser) forControlEvents:UIControlEventTouchUpInside];
     
-    FBLoginView *loginView =
-    [[FBLoginView alloc] initWithReadPermissions:
-     @[@"basic_info"]];
-    
-    loginView.delegate = self;
     
     [self.view addSubview:loginView];
     
     [loginView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo(@250);
+        make.height.equalTo(@50);
         make.center.equalTo(self.view);
     }];
-
-    
 }
-- (void)loginViewFetchedUserInfo:(FBLoginView *)loginView
-                            user:(id<FBGraphUser>)user {
-    LoginAppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
-    [appDelegate sessionStateChanged:FBSession.activeSession state:FBSession.activeSession.state error:nil];
-    [self loginUserWithParse:user];
+
+- (void)loginUser{
+    [[FacebookManager facebookManager] attemptToLogIn];
+}
+
+- (void)sucessfulllLogIn{
+   // [[NSUserDefaults standardUserDefaults] setObject: forKey:<#(NSString *)#>:YES forKey:@"Setting 1"];
+    DrawerViewController* homeController = [[DrawerViewController alloc]init];
+    [self presentViewController:homeController animated:YES completion:nil];
 }
 
 
 -(void)loginUserWithParse:(id<FBGraphUser>)user{
-    PFUser *testObject = [PFUser objectWithClassName:userClass];
-    testObject[userObjectId] = user.id;
-    testObject[userUsername] = user.name;
-    testObject[userPassword] = @"Password";
-    [testObject saveInBackground];
+//    PFUser *testObject = [PFUser objectWithClassName:userClass];
+//    testObject[userObjectId] = user.id;
+//    testObject[userUsername] = user.name;
+//    testObject[userPassword] = @"Password";
+ //   [testObject saveInBackground];
 
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

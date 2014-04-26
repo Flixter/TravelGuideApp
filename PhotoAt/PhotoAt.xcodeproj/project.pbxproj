@@ -23,6 +23,10 @@
 		B5A1F01619084E740027666B /* PhotoAtTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A1F01519084E740027666B /* PhotoAtTests.m */; };
 		B5A1F02319085CB40027666B /* NavigationUiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A1F02219085CB40027666B /* NavigationUiViewController.m */; };
 		B5A1F02619085E4F0027666B /* CenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A1F02519085E4F0027666B /* CenterViewController.m */; };
+		B5A2B7EC190B2DF7003AB9B1 /* CheckInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A2B7EB190B2DF7003AB9B1 /* CheckInViewController.m */; };
+		B5BE6B42190AEDCC0075FB2B /* User.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5BE6B40190AEDCC0075FB2B /* User.xcdatamodeld */; };
+		B5BE6B49190AF01A0075FB2B /* FacebookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BE6B48190AF01A0075FB2B /* FacebookManager.m */; };
+		B5BE6B51190AFBFD0075FB2B /* DrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BE6B50190AFBFD0075FB2B /* DrawerViewController.m */; };
 		EBEFBC6A78B4400EB58BE6BC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83CF6DC6F79841F7A961CC78 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +67,14 @@
 		B5A1F02419085E4F0027666B /* CenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenterViewController.h; sourceTree = "<group>"; };
 		B5A1F02519085E4F0027666B /* CenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenterViewController.m; sourceTree = "<group>"; };
 		B5A1F027190868340027666B /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		B5A2B7EA190B2DF7003AB9B1 /* CheckInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckInViewController.h; sourceTree = "<group>"; };
+		B5A2B7EB190B2DF7003AB9B1 /* CheckInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInViewController.m; sourceTree = "<group>"; };
+		B5BE6B41190AEDCC0075FB2B /* User.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = User.xcdatamodel; sourceTree = "<group>"; };
+		B5BE6B47190AF01A0075FB2B /* FacebookManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookManager.h; sourceTree = "<group>"; };
+		B5BE6B48190AF01A0075FB2B /* FacebookManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookManager.m; sourceTree = "<group>"; };
+		B5BE6B4C190AF1070075FB2B /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
+		B5BE6B4F190AFBFD0075FB2B /* DrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawerViewController.h; sourceTree = "<group>"; };
+		B5BE6B50190AFBFD0075FB2B /* DrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +137,13 @@
 		B5A1EFF019084E730027666B /* PhotoAt */ = {
 			isa = PBXGroup;
 			children = (
+				B5BE6B4A190AF0E90075FB2B /* Misc */,
+				B5BE6B46190AEFF80075FB2B /* Model */,
+				B5BE6B40190AEDCC0075FB2B /* User.xcdatamodeld */,
+				B5A2B7EA190B2DF7003AB9B1 /* CheckInViewController.h */,
+				B5A2B7EB190B2DF7003AB9B1 /* CheckInViewController.m */,
+				B5BE6B4F190AFBFD0075FB2B /* DrawerViewController.h */,
+				B5BE6B50190AFBFD0075FB2B /* DrawerViewController.m */,
 				B5A1F02419085E4F0027666B /* CenterViewController.h */,
 				B5A1F02519085E4F0027666B /* CenterViewController.m */,
 				B5A1F02119085CB40027666B /* NavigationUiViewController.h */,
@@ -168,6 +187,23 @@
 				B5A1F01219084E740027666B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B5BE6B46190AEFF80075FB2B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B5BE6B47190AF01A0075FB2B /* FacebookManager.h */,
+				B5BE6B48190AF01A0075FB2B /* FacebookManager.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B5BE6B4A190AF0E90075FB2B /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				B5BE6B4C190AF1070075FB2B /* Config.h */,
+			);
+			path = Misc;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,11 +339,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5BE6B42190AEDCC0075FB2B /* User.xcdatamodeld in Sources */,
 				B5A1F02319085CB40027666B /* NavigationUiViewController.m in Sources */,
 				B5A1EFFB19084E730027666B /* LoginAppDelegate.m in Sources */,
 				B5A1EFF719084E730027666B /* main.m in Sources */,
+				B5A2B7EC190B2DF7003AB9B1 /* CheckInViewController.m in Sources */,
 				B5A1F00119084E730027666B /* LoginViewController.m in Sources */,
+				B5BE6B51190AFBFD0075FB2B /* DrawerViewController.m in Sources */,
 				B5A1F02619085E4F0027666B /* CenterViewController.m in Sources */,
+				B5BE6B49190AF01A0075FB2B /* FacebookManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,6 +570,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B5BE6B40190AEDCC0075FB2B /* User.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B5BE6B41190AEDCC0075FB2B /* User.xcdatamodel */,
+			);
+			currentVersion = B5BE6B41190AEDCC0075FB2B /* User.xcdatamodel */;
+			name = User.xcdatamodeld;
+			path = ../User.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B5A1EFDF19084E730027666B /* Project object */;
 }
