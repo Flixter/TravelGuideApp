@@ -15,5 +15,6 @@
     #import <Foundation/Foundation.h>
     #import "Config.h"
     #import <Masonry.h>
+#import <Parse/Parse.h>
 #import "Constants.h"
 #endif

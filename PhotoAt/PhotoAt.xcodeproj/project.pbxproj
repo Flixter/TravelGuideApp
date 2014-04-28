@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B54B0C6E190EE62F00E15B4E /* CustomRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = B54B0C6D190EE62F00E15B4E /* CustomRatingView.m */; };
+		B54B0C70190EE98000E15B4E /* 5starsgray.png in Resources */ = {isa = PBXBuildFile; fileRef = B54B0C6F190EE98000E15B4E /* 5starsgray.png */; };
 		B5A1EFEB19084E730027666B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A1EFEA19084E730027666B /* Foundation.framework */; };
 		B5A1EFED19084E730027666B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A1EFEC19084E730027666B /* CoreGraphics.framework */; };
 		B5A1EFEF19084E730027666B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A1EFEE19084E730027666B /* UIKit.framework */; };
@@ -43,6 +45,9 @@
 /* Begin PBXFileReference section */
 		56A0DDB714DB414F966AFBB7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		83CF6DC6F79841F7A961CC78 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B54B0C6C190EE62F00E15B4E /* CustomRatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomRatingView.h; sourceTree = "<group>"; };
+		B54B0C6D190EE62F00E15B4E /* CustomRatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomRatingView.m; sourceTree = "<group>"; };
+		B54B0C6F190EE98000E15B4E /* 5starsgray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5starsgray.png; sourceTree = "<group>"; };
 		B5A1EFE719084E730027666B /* PhotoAt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoAt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5A1EFEA19084E730027666B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B5A1EFEC19084E730027666B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -137,6 +142,7 @@
 		B5A1EFF019084E730027666B /* PhotoAt */ = {
 			isa = PBXGroup;
 			children = (
+				B54B0C6F190EE98000E15B4E /* 5starsgray.png */,
 				B5BE6B4A190AF0E90075FB2B /* Misc */,
 				B5BE6B46190AEFF80075FB2B /* Model */,
 				B5BE6B40190AEDCC0075FB2B /* User.xcdatamodeld */,
@@ -194,6 +200,8 @@
 			children = (
 				B5BE6B47190AF01A0075FB2B /* FacebookManager.h */,
 				B5BE6B48190AF01A0075FB2B /* FacebookManager.m */,
+				B54B0C6C190EE62F00E15B4E /* CustomRatingView.h */,
+				B54B0C6D190EE62F00E15B4E /* CustomRatingView.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -287,6 +295,7 @@
 			files = (
 				B5A1F00319084E730027666B /* Images.xcassets in Resources */,
 				B5A1EFF519084E730027666B /* InfoPlist.strings in Resources */,
+				B54B0C70190EE98000E15B4E /* 5starsgray.png in Resources */,
 				B5A1EFFE19084E730027666B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,6 +354,7 @@
 				B5A1EFF719084E730027666B /* main.m in Sources */,
 				B5A2B7EC190B2DF7003AB9B1 /* CheckInViewController.m in Sources */,
 				B5A1F00119084E730027666B /* LoginViewController.m in Sources */,
+				B54B0C6E190EE62F00E15B4E /* CustomRatingView.m in Sources */,
 				B5BE6B51190AFBFD0075FB2B /* DrawerViewController.m in Sources */,
 				B5A1F02619085E4F0027666B /* CenterViewController.m in Sources */,
 				B5BE6B49190AF01A0075FB2B /* FacebookManager.m in Sources */,

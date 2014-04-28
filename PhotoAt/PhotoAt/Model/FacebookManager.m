@@ -10,6 +10,9 @@
 #import <FacebookSDK/FacebookSDK.h>
 
 @implementation FacebookManager
+
+@synthesize user;
+
 -(id)init{
     self = [super init];
     
@@ -29,15 +32,31 @@
              // Handle error
          }
          else {
-             
+             self.user = FBuser;
              profilePic.profileID = FBuser.id;
              [[NSUserDefaults standardUserDefaults]
               setObject:FBuser.name forKey:UserName];
-
          }
      }];
-
 }
+
+
+-(NSString*)getUserName{
+    return [self.user name];
+}
+-(NSString *)getId{
+    return [self.user id];
+}
+
++(id)facebookManager{
+    static FacebookManager* facebookManager = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        facebookManager = [[self alloc]init];
+    });
+    return facebookManager;
+}
+
 - (void)facebookPlaces {
     FBPlacePickerViewController *placePickerController = [[FBPlacePickerViewController alloc] init];
     placePickerController.title = @"Nearby Places";
@@ -51,14 +70,8 @@
     NSString *firstLong = [[NSString alloc] initWithFormat:@"%f", placePickerController.locationCoordinate.longitude];
     NSLog(@"First Long: %@", firstLong);
 }
-+(id)facebookManager{
-    static FacebookManager* facebookManager = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        facebookManager = [[self alloc]init];
-    });
-    return facebookManager;
-}
+
+
 
 -(void)checkForCachedToken{
     if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {

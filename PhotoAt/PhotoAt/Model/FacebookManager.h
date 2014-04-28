@@ -12,6 +12,8 @@
 @interface FacebookManager : NSObject
 @property (nonatomic, retain) NSArray* permissions;
 @property (nonatomic, retain) NSMutableData* imageData;
+@property (nonatomic, retain) NSDictionary<FBGraphUser> *user;
+
 +(id)facebookManager;
 
 -(void)sessionStateChanged:(FBSession *)session state:(FBSessionState )state error:(NSError *)error;
@@ -20,5 +22,9 @@
 -(void)attemptToLogIn;
 -(void)logOutUser;
 -(void)checkForCachedToken;
-- (void)facebookPlaces;
+-(void)facebookPlaces;
+
+-(NSString *)getUserName;
+-(NSString *)getId;
+
 @end

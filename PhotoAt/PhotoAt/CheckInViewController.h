@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
 
-@interface CheckInViewController : UIViewController <FBPlacePickerDelegate, FBViewControllerDelegate>
+@interface CheckInViewController : UIViewController <FBPlacePickerDelegate, FBViewControllerDelegate,UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
-@property (nonatomic, retain) UIButton* nearByPlaces;
-
+@property (nonatomic, retain) UIButton* checkIn;
+@property (nonatomic, retain) UIImageView* takenImage;
+@property (nonatomic, retain) UITextField* comment;
 @end

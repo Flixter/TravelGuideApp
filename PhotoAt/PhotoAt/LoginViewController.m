@@ -49,19 +49,20 @@
 }
 
 - (void)sucessfulllLogIn{
-   // [[NSUserDefaults standardUserDefaults] setObject: forKey:<#(NSString *)#>:YES forKey:@"Setting 1"];
-    DrawerViewController* homeController = [[DrawerViewController alloc]init];
-    [self presentViewController:homeController animated:YES completion:nil];
+    [self loginUserWithParse];
+     DrawerViewController* homeController = [[DrawerViewController alloc]init];
+    UINavigationController* navController = [[UINavigationController alloc]initWithRootViewController:homeController];
+   
+    
+    [self presentViewController:navController animated:YES completion:nil];
 }
 
 
--(void)loginUserWithParse:(id<FBGraphUser>)user{
-//    PFUser *testObject = [PFUser objectWithClassName:userClass];
-//    testObject[userObjectId] = user.id;
-//    testObject[userUsername] = user.name;
-//    testObject[userPassword] = @"Password";
- //   [testObject saveInBackground];
-
+-(void)loginUserWithParse{
+    PFUser *userObject = [PFUser objectWithClassName:userClass];
+    userObject[userObjectId] =[[FacebookManager facebookManager] getId];
+    userObject[userUsername] = [[FacebookManager facebookManager] getUserName];
+    [userObject saveInBackground];
 }
 
 - (void)didReceiveMemoryWarning

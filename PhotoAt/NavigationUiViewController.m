@@ -124,13 +124,16 @@
 
 -(void)checkIn{
     CheckInViewController* checkInViewController = [CheckInViewController new];
-    [self presentViewController:checkInViewController animated:YES completion:nil];
+    UINavigationController* navController = [[UINavigationController alloc]initWithRootViewController:checkInViewController];
+
+    [self presentViewController:navController animated:YES completion:nil];
 
 }
 
 -(void)goToProfile{
 
 }
+
 -(void)goToHome{
 
     [[FacebookManager facebookManager] facebookPlaces];

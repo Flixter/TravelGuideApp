@@ -12,6 +12,12 @@
 #define userClass                       @"User"
 //User Class Coloum Names
 
-#define userObjectId                    @"objectId"
+#define userObjectId                    @"facebookID"
 #define userUsername                    @"username"
-#define userPassword                    @"password"
+
+
+#define picturesClass                   @"Pictures"
+#define picturesCheckIn                 @"CheckInPlace"
+#define picturesOwner                   @"OwnerID"
+#define picturesPicture                 @"picture"
+#define picturesComment                 @"Comment"
